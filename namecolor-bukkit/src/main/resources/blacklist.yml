@@ -1,0 +1,20 @@
+# Fuzzy matching means that words in the blacklist don't have to be exactly identical,
+# only similar enough.
+fuzzy: true
+
+# Percentage similarity allowed for "fuzzy" matching.
+# Range: 0-1
+# (Higher number = more similar)
+max-percentage: 0.2
+
+# Should nicknames be normalized before checking?
+# (remove things such as "_", "-", etc.)
+normalize: true
+
+blacklist:
+  - "gerlnerg"
+
+# Java regex matching
+# Fuzzy matching (first option) is recommended over this.
+regex:
+  # - "(?i)\\b(f+[*@#_u]+[ck]+(er|ing|ed|s)?|f+u+q+|motherf+[*@#_u]+[ck]+(er|ing)?)\\b"
