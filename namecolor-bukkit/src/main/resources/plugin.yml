@@ -20,12 +20,6 @@ commands:
   whois:
     description: "Determines who has what nickname"
     usage: /whois <display name>
-  color:
-    description: "Shows bukkit color codes"
-    usage: /color
-  colors:
-    description: "Shows bukkit color codes"
-    usage: /color
   gradient:
     description: "Applies a gradient to a player's displayname"
     usage: /gradient <color1> <color2> <player>

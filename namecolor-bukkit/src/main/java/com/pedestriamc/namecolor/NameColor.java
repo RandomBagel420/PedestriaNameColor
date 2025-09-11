@@ -31,7 +31,7 @@ public final class NameColor extends JavaPlugin {
 
     public static final String PLUGIN_VERSION = "1.11";
     public static final short PLUGIN_NUMBER = 13;
-    public static final String DISTRIBUTOR = "modrinth";
+    public static final String DISTRIBUTOR = "hangar";
 
     private FileManager fileManager;
     private NameUtilities nameUtilities;

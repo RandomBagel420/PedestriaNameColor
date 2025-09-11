@@ -35,6 +35,7 @@ public class FileManager {
         playersConfig = YamlConfiguration.loadConfiguration(playersFile);
         blacklistConfig = YamlConfiguration.loadConfiguration(blacklistFile);
         updateIfPresent("config.yml");
+        updateIfPresent("blacklist.yml");
     }
 
     private File loadFile(String fileName) {

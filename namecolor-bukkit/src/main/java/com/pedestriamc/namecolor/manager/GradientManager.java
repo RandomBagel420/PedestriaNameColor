@@ -4,7 +4,7 @@ import com.pedestriamc.namecolor.NameColor;
 import com.pedestriamc.namecolor.api.color.Gradient;
 import com.pedestriamc.namecolor.api.color.painter.Painter;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
 

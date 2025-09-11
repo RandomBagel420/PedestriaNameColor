@@ -1,6 +1,7 @@
 package com.pedestriamc.namecolor.manager;
 
 import com.pedestriamc.namecolor.NameColor;
+import com.pedestriamc.namecolor.commands.ColorsCommand;
 import com.pedestriamc.namecolor.commands.GradientCommand;
 import com.pedestriamc.namecolor.commands.namecolor.NameColorCommand;
 import com.pedestriamc.namecolor.commands.NicknameCommand;
@@ -8,7 +9,7 @@ import com.pedestriamc.namecolor.commands.WhoIsCommand;
 import com.pedestriamc.namecolor.listeners.JoinListener;
 import com.pedestriamc.namecolor.listeners.LeaveListener;
 import com.pedestriamc.namecolor.tabcompleters.GradientTabCompleter;
-import com.pedestriamc.namecolor.tabcompleters.NameColorTabCompleter;
+import com.pedestriamc.namecolor.tabcompleters.color.NameColorTabCompleter;
 import com.pedestriamc.namecolor.tabcompleters.NicknameTabCompleter;
 import com.pedestriamc.namecolor.tabcompleters.WhoIsTabCompleter;
 import org.bukkit.command.CommandExecutor;
@@ -28,7 +29,7 @@ public class ClassRegistryManager {
         new ClassRegistryManager(nameColor).registerClasses();
     }
 
-    private ClassRegistryManager(NameColor nameColor) {
+    private ClassRegistryManager(@NotNull NameColor nameColor) {
         this.nameColor = nameColor;
     }
 
@@ -46,6 +47,13 @@ public class ClassRegistryManager {
         NicknameTabCompleter nicknameTabCompleter = new NicknameTabCompleter();
         registerCommand("nick", nicknameCommand, nicknameTabCompleter);
         registerCommand("nickname", nicknameCommand, nicknameTabCompleter);
+
+        if(nameColor.getConfig().getBoolean("color-command")) {
+            try {
+                registerCommand("color", new ColorsCommand(), null);
+            } catch(Exception ignored) {
+            }
+        }
     }
 
     private void registerCommand(String name, CommandExecutor executor, TabCompleter tabCompleter) {

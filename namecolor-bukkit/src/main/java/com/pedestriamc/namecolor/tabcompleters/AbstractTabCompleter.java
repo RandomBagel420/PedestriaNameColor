@@ -14,6 +14,7 @@ public abstract class AbstractTabCompleter implements TabCompleter {
 
     protected static final List<String> EMPTY = List.of();
 
+    @NotNull
     protected List<String> getPlayerNames() {
         ArrayList<String> list = new ArrayList<>();
         for(Player p : Bukkit.getOnlinePlayers()) {
@@ -22,7 +23,7 @@ public abstract class AbstractTabCompleter implements TabCompleter {
         return list;
     }
 
-    protected List<String> filter(List<String> list, String input) {
+    protected List<String> filter(@NotNull List<String> list, @NotNull String input) {
         return list.stream()
                 .filter(arg -> arg.toLowerCase().startsWith(input.toLowerCase()))
                 .toList();
@@ -34,7 +35,7 @@ public abstract class AbstractTabCompleter implements TabCompleter {
      * @return A populated List<String>
      */
     @SafeVarargs
-    final @NotNull List<String> collect(@NotNull Collection<String>... collections) {
+    protected final @NotNull List<String> collect(@NotNull Collection<String>... collections) {
         List<String> list = new ArrayList<>();
         for(Collection<String> collection : collections) {
             list.addAll(collection);
@@ -49,7 +50,7 @@ public abstract class AbstractTabCompleter implements TabCompleter {
      * @return A populated List<String>
      */
     @SafeVarargs
-    final @NotNull List<String> collect(@NotNull String string, @NotNull Collection<String>... collections) {
+    protected final @NotNull List<String> collect(@NotNull String string, @NotNull Collection<String>... collections) {
         List<String> list = collect(collections);
         list.add(string);
         return list;

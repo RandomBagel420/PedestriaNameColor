@@ -42,6 +42,10 @@ notify-players: true
 # Nickname prefix, inserted before nicknames:
 nick-prefix: ''
 
+# Enable the /color command
+# (shows Minecraft color codes)
+color-command: true
+
 # +----- Messages -----+
 # Note: prefix is used before all messages.
 # Compatible with '&' color codes.
