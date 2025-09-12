@@ -1,6 +1,7 @@
 package com.pedestriamc.namecolor.api.color.painter;
 
 import com.pedestriamc.namecolor.api.color.Gradient;
+import com.pedestriamc.namecolor.api.color.RGBColor;
 import org.bukkit.ChatColor;
 import org.jetbrains.annotations.NotNull;
 
@@ -50,7 +51,7 @@ final class BungeeStripIgnoreStylesPainter implements Painter {
                 }
             }
 
-            builder.append(net.md_5.bungee.api.ChatColor.of(colors.get(i)));
+            builder.append(RGBColor.of(colors.get(i)));
             builder.append(currentStyle);
             builder.append(val);
         }

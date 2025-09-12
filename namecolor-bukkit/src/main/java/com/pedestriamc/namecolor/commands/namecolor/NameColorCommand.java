@@ -29,8 +29,8 @@ public class NameColorCommand implements CommandExecutor {
 
     private static final int MAX_ARG_LENGTH =
             Style.values().length /* Style quantity */
-            + 1 /* One color */
-            + 1 /* Only one player may be defined */;
+                    + 1 /* One color */
+                    + 1 /* Only one player may be defined */;
 
 
     private final boolean notify;

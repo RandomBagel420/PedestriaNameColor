@@ -1,7 +1,7 @@
 package com.pedestriamc.namecolor.api.color.painter;
 
 import com.pedestriamc.namecolor.api.color.Gradient;
-import net.md_5.bungee.api.ChatColor;
+import com.pedestriamc.namecolor.api.color.RGBColor;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
@@ -17,7 +17,7 @@ class BungeePainter implements Painter {
 
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < chars.length; i++) {
-            sb.append(ChatColor.of(colors.get(i)));
+            sb.append(RGBColor.of(colors.get(i)));
             sb.append(chars[i]);
         }
 
