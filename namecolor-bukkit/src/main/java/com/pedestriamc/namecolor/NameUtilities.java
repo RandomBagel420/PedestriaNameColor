@@ -90,6 +90,20 @@ public final class NameUtilities {
         displayName += "&r";
         displayName = ChatColor.translateAlternateColorCodes('&', displayName);
         player.setDisplayName(ChatColor.translateAlternateColorCodes('&', displayName));
+
+        if(nameColor.getConfig().getBoolean("sync-tab-list", true)) {
+            try {
+                player.setPlayerListName(displayName);
+            } catch(IllegalArgumentException e) {
+                nameColor.warn("Unable to apply tab-list name for " + player.getName() + ": " + e.getMessage());
+            }
+        }
+
+        if(nameColor.getConfig().getBoolean("sync-nameplate", true)) {
+            player.setCustomName(displayName);
+            player.setCustomNameVisible(true);
+        }
+
         if(usingEssentials) {
             essentials.getUser(player.getUniqueId()).setNickname(displayName);
         }
