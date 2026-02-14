@@ -42,6 +42,19 @@ notify-players: true
 # Nickname prefix, inserted before nicknames:
 nick-prefix: ''
 
+# Synchronize display name to the tab list.
+sync-tab-list: true
+
+# Synchronize display name to in-world nameplates (above player heads).
+# Disable if another plugin fully controls player nametags.
+sync-nameplate: true
+
+# Replace plain usernames with NameColor display names in join/leave messages.
+format-join-leave-messages: true
+
+# Replace plain usernames with NameColor display names in death messages.
+format-death-messages: true
+
 # Enable the /color command
 # (shows Minecraft color codes)
 color-command: true
